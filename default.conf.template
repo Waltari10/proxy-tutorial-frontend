@@ -1,0 +1,14 @@
+server {
+  # Listen to port defined by Heroku
+  listen $PORT default_server;
+ 
+  # redirect requests made to /
+  location / {        
+    proxy_pass https://example-frontend-1234.herokuapp.com/;
+  }
+ 
+  # Redirect requests made to /api
+  location /api/ {
+    proxy_pass https://example-backend-1234.herokuapp.com/;
+  }
+}
