@@ -2,9 +2,9 @@ server {
   # Listen to port defined by Heroku
   listen $PORT default_server;
  
-  # redirect requests made to /
+  # Serve static files for requests made to /
   location / {        
-    proxy_pass https://example-frontend-1234.herokuapp.com/;
+    root /usr/src/app/build;
   }
  
   # Redirect requests made to /api
